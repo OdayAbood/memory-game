@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:none;
+    text-decoration: none;
+    list-style: none;
+}
+.game
+{
+    width:600px;
+    height: 625px;
+    background-color:#eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap ;
+    margin: auto auto;
+}
+.is-flipped , .has-matched{
+    transform:perspective(300px) rotateY(180deg) ;
+}
+.no-clicking{
+    pointer-events: none;
+}
+.game-block{
+    width:125px;
+    height:100px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;   
+    cursor: pointer;
+}
+.face{
+    width: 125px;
+    height: 100px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front{
+    background-color: #000000ed;
+} 
+.front::before{
+    content: "!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 100px;
+    color: #fff;
+
+}
+.back{
+    transform: rotateY(180deg);
+}
+.back>img{
+    width:125px;
+    height:100px;
+}
+
